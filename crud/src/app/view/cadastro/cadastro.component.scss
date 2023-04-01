@@ -1,0 +1,43 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+.w100{
+    width: 100%;
+}
+.w50{
+    width: 50%;
+}
+.w25{
+    width: 25%;
+}  
+.d-flex{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.mr-24{
+    margin-right: 24px;
+}
+.mat-divider{
+    width: 100%;
+    border-top-width: 3px;
+    margin-bottom: 51px;
+}
+.labelTextForma{
+     color: #377DC0;
+     font-size: 24px;
+     font-weight: 700;
+     padding-bottom: 10px;
+}
+.mat-mdc-radio-button ~ .mat-mdc-radio-button {
+    margin-left: 16px;
+  }
+  .column{
+    flex-direction: column;
+  }
+.w326{
+    width: 326px;
+    margin-bottom: 10px;
+}
