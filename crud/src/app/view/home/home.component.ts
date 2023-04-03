@@ -7,10 +7,7 @@ export interface PeriodicElement {
   criado: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {nome: 'Assaisga', email:'pricila9722@uorak.com', cpf: '647.555.680-72', criado: '31/03/2023'},
-  {nome: 'Teste', email:'teste@uorak.com', cpf: '647.555.680-72', criado: '01/08/2023'}
-];
+
 
 /**
  * @title Styling columns using their auto-generated column names
@@ -21,6 +18,20 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  displayedColumns: string[] = ['demo-nome', 'demo-email', 'demo-cpf', 'demo-criado', 'demo-actions'];
-  dataSource = ELEMENT_DATA;
+
+  ELEMENT_DATA: PeriodicElement[] = [];
+
+  displayedColumns: string[] = ['demo-nome', 'demo-email', 'demo-cpf', 'demo-criado','demo-actions'];
+  dataSource = this.ELEMENT_DATA;
+
+  cadastro: any;
+
+  async ngOnInit() {
+   this.cadastro = JSON.parse(this.getCadastro() || '{}');
+   this.ELEMENT_DATA = JSON.parse(this.getCadastro() || '{}');
+  }
+
+  getCadastro() {
+    return localStorage.getItem('cadastro');
+  }
 }

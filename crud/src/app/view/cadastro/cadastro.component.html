@@ -1,71 +1,90 @@
-<mat-form-field appearance="fill" [ngClass]="'w100'">
-  <mat-label>Nome</mat-label>
-  <input matInput>
-</mat-form-field>
-
-<mat-form-field appearance="fill" [ngClass]="'w100'">
-  <mat-label>Email</mat-label>
-  <input matInput>
-</mat-form-field>
-
-<mat-form-field appearance="fill" [ngClass]="'w100'">
-  <mat-label>CPF</mat-label>
-  <input matInput>
-</mat-form-field>
-
-<div class="d-flex">
-  <mat-form-field appearance="fill" [ngClass]="'w100 mr-24'">
-    <mat-label>Endereço</mat-label>
-    <input matInput>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill" [ngClass]="'w100'">
-    <mat-label>Estado</mat-label>
-    <mat-select>
-      <mat-option value="one">First option</mat-option>
-      <mat-option value="two">Second option</mat-option>
-    </mat-select>
-  </mat-form-field>
+<form class="row g-3">
+  <div class="col-md-12">
+    <label for="inputNome" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="inputNome" placeholder="Digite seu nome " [(ngModel)]="nome" name="nome">
+  </div>
+  <div class="col-md-12">
+    <label for="inputEmail" class="form-label">E-mail</label>
+    <input type="email" class="form-control" id="inputEmail" placeholder="Digite seu e-mail" [(ngModel)]="email" name="email">
+    </div>
+  <div class="col-12">
+    <label for="inputCPF" class="form-label">CPF</label>
+    <input type="text" class="form-control" id="inputCPF" placeholder="Digite CPF aqui" [(ngModel)]="cpf" name="cpf">
+  </div>
+  <div class="col-6">
+    <label for="inputEndereco" class="form-label">Endereço</label>
+    <input type="text" class="form-control" id="inputEndereco" placeholder="Digite endereço" [(ngModel)]="endereco" name="endereco">
+  </div>
+  <div class="col-md-6">
+    <label for="inputEstado" class="form-label">Estado</label>
+    <select id="inputEstado" class="form-select" [(ngModel)]="estado" name="estado">
+      <option selected>Selecione o Estado</option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label for="inputState" class="form-label">CEP</label>
+    <input type="text" class="form-control" id="inputEndereco" placeholder="00.000 - 000" [(ngModel)]="cep" name="cep">
+  </div>
+  <div class="col-md-6">
+    <label for="inputZip" class="form-label">Cidade</label>
+    <select id="inputEstado" class="form-select" [(ngModel)]="cidade" name="cidade">
+      <option selected>Selecione a Cidade</option>
+    </select>
+  </div>
+  <div class="col-md-12">
+    <h2 class="">Forma de pagamento</h2>
+    <hr class="solid">
+  </div>
+  <div class="col-md-12">
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+      <label class="form-check-label" for="inlineRadio1">Cartão de Crédito</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+      <label class="form-check-label" for="inlineRadio2">Boleto Bancário</label>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="inputNomeCartao" class="form-label">Nome do cartão</label>
+    <input type="text" class="form-control" id="inputNomeCartao" placeholder="Nome impresso no cartão" [(ngModel)]="nomeCartao" name="nomeCartao">
+  </div>
+  <div class="col-md-6 ">
+    <label for="inputState" class="form-label">Data de Expiração</label>
+    <div class="d-flex">
+    <div class="col-md-6 me-1">
+    <select id="inputEstado" class="form-select" [(ngModel)]="mes" name="mes">
+      <option selected>Mês</option>
+      <option>...</option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <select id="inputEstado" class="form-select" [(ngModel)]="ano" name="ano">
+      <option selected>Ano</option>
+      <option>...</option>
+    </select>
+  </div>
 </div>
-<label [ngClass]="'labelTextForma'">Forma de Pagamento</label>
-<mat-divider> </mat-divider>
-<mat-radio-group name="forma">
-  <mat-radio-button value="cartao" checked="true">Cartão de Crédito</mat-radio-button>
-  <mat-radio-button value="boleto">Boleto Bancário</mat-radio-button>
-</mat-radio-group>
-<div class="d-flex">
-  <mat-form-field appearance="fill" [ngClass]="'w50 mr-24'">
-    <mat-label>Nome do cartão</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <mat-form-field appearance="fill" [ngClass]="'w25 mr-24'">
-    <mat-label>Mês</mat-label>
-    <mat-select>
-      <mat-option value="one">First option</mat-option>
-      <mat-option value="two">Second option</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field appearance="fill" [ngClass]="'w25'">
-    <mat-label>Ano</mat-label>
-    <mat-select>
-      <mat-option value="one">First option</mat-option>
-      <mat-option value="two">Second option</mat-option>
-    </mat-select>
-  </mat-form-field>
-</div>
-<div class="d-flex">
-  <mat-form-field appearance="fill" [ngClass]="'w50 mr-24'">
-    <mat-label>Número do cartão</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <mat-form-field appearance="fill" [ngClass]="'w50'">
-    <mat-label>Código de Segurança</mat-label>
-    <input matInput>
-  </mat-form-field>
-</div>
-<mat-divider> </mat-divider>
-<div class="d-flex column">
-  <p>Seu cartão será debitado em R$ 49,00</p>
-  <button mat-flat-button color="primary" [ngClass]="'w326'">REALIZAR MATRÍCULA</button>
-  <small>Informações seguras e criptografadas</small>
-</div>
+  </div>
+  <div class="col-md-6">
+    <label for="inputNumeroCartao" class="form-label">Número do Cartão</label>
+    <input type="text" class="form-control" id="inputNumeroCartao" placeholder="0000 0000 0000 0000" [(ngModel)]="numeroCartao" name="numeroCartao">
+  </div>
+  <div class="col-md-6">
+    <label for="inputCodigo" class="form-label">Código de Segurança</label>
+    <input type="text" class="form-control" id="inputCodigo" placeholder="XXX" [(ngModel)]="codigoSeguranca" name="codigoSeguranca">
+  </div>
+  <div class="col-md-12">
+    <hr class="solid">
+  </div>
+  <div class="col-12">
+    Seu cartão será debitado em R$ 49,00
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary" (click)="salvar()">REALIZAR MATRÍCULA</button>
+  </div>
+  <div class="col-12">
+    <small>Informações seguras e criptografadas</small>
+  </div>
+</form>
+
