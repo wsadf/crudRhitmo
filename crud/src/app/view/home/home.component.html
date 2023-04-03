@@ -1,38 +1,38 @@
 <h2 class="subtitle">Lista de cliente</h2>
-<form class="example-form">
-  <mat-label>Nome do cliente</mat-label>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Digite seu nome">
-  </mat-form-field>
+<form>
+  <div class="col-md-12 mb-5">
+    <label for="inputNomeCliente" class="form-label">Nome do cliente</label>
+    <input type="text" class="form-control" id="inputNomeCliente" placeholder="Digite seu nome">
+  </div>
 </form>
-  <table class="table table-bordered border-primary">
-    <thead>
-      <tr>
-        <th scope="col">Nome</th>
-        <th scope="col">E-mail</th>
-        <th scope="col">CPF</th>
-        <th scope="col">Criado em</th>
-        <th scope="col">Ações</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of cadastro">
-        <th scope="row">{{item.nome}}</th>
-        <td>{{item.email}}</td>
-        <td>{{item.cpf}}</td>
-        <td>{{item.criado}}</td>
-        <td class="d-flex justify-content-around">
-          <img src="assets/img/pen.svg" alt="">
-          <img src="assets/img/trash.svg" alt="">
-        </td>
-      </tr>
-      <tr>
-        <td>Exemplo de nome</td>
-        <td>exemplo@mail.com</td>
-        <td>000.000.000-00</td>
-        <td>00/00/000</td>
-        <td class="d-flex justify-content-center"><img src="assets/img/plus.svg" alt=""></td>
-      </tr>
-    </tbody>
-  </table>
-  
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Criado em</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of cadastro">
+      <td scope="row">{{item.nome}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.cpf}}</td>
+      <td>{{item.criado}}</td>
+      <td class="d-flex justify-content-around">
+        <img src="assets/img/pen.svg" alt="">
+        <img src="assets/img/trash.svg" alt="">
+      </td>
+    </tr>
+    <tr>
+      <td class="text-body-tertiary">Exemplo de nome</td>
+      <td class="text-body-tertiary">exemplo@mail.com</td>
+      <td class="text-body-tertiary">000.000.000-00</td>
+      <td class="text-body-tertiary">00/00/000</td>
+      <td class="d-flex justify-content-center text-body-tertiary"><a href="cadastro"><img src="assets/img/plus.svg"
+            alt=""></a></td>
+    </tr>
+  </tbody>
+</table>

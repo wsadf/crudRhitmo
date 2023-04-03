@@ -1,19 +1,22 @@
 <form class="row g-3">
   <div class="col-md-12">
     <label for="inputNome" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="inputNome" placeholder="Digite seu nome " [(ngModel)]="nome" name="nome">
+    <input type="text" class="form-control" id="inputNome" placeholder="Digite seu nome " [(ngModel)]="nome"
+      name="nome">
   </div>
   <div class="col-md-12">
     <label for="inputEmail" class="form-label">E-mail</label>
-    <input type="email" class="form-control" id="inputEmail" placeholder="Digite seu e-mail" [(ngModel)]="email" name="email">
-    </div>
+    <input type="email" class="form-control" id="inputEmail" placeholder="Digite seu e-mail" [(ngModel)]="email"
+      name="email">
+  </div>
   <div class="col-12">
     <label for="inputCPF" class="form-label">CPF</label>
     <input type="text" class="form-control" id="inputCPF" placeholder="Digite CPF aqui" [(ngModel)]="cpf" name="cpf">
   </div>
   <div class="col-6">
     <label for="inputEndereco" class="form-label">Endereço</label>
-    <input type="text" class="form-control" id="inputEndereco" placeholder="Digite endereço" [(ngModel)]="endereco" name="endereco">
+    <input type="text" class="form-control" id="inputEndereco" placeholder="Digite endereço" [(ngModel)]="endereco"
+      name="endereco">
   </div>
   <div class="col-md-6">
     <label for="inputEstado" class="form-label">Estado</label>
@@ -47,32 +50,35 @@
   </div>
   <div class="col-md-6">
     <label for="inputNomeCartao" class="form-label">Nome do cartão</label>
-    <input type="text" class="form-control" id="inputNomeCartao" placeholder="Nome impresso no cartão" [(ngModel)]="nomeCartao" name="nomeCartao">
+    <input type="text" class="form-control" id="inputNomeCartao" placeholder="Nome impresso no cartão"
+      [(ngModel)]="nomeCartao" name="nomeCartao">
   </div>
   <div class="col-md-6 ">
     <label for="inputState" class="form-label">Data de Expiração</label>
     <div class="d-flex">
-    <div class="col-md-6 me-1">
-    <select id="inputEstado" class="form-select" [(ngModel)]="mes" name="mes">
-      <option selected>Mês</option>
-      <option>...</option>
-    </select>
-  </div>
-  <div class="col-md-6">
-    <select id="inputEstado" class="form-select" [(ngModel)]="ano" name="ano">
-      <option selected>Ano</option>
-      <option>...</option>
-    </select>
-  </div>
-</div>
+      <div class="col-md-6 me-1">
+        <select id="inputEstado" class="form-select" [(ngModel)]="mes" name="mes">
+          <option selected>Mês</option>
+          <option>...</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <select id="inputEstado" class="form-select" [(ngModel)]="ano" name="ano">
+          <option selected>Ano</option>
+          <option>...</option>
+        </select>
+      </div>
+    </div>
   </div>
   <div class="col-md-6">
     <label for="inputNumeroCartao" class="form-label">Número do Cartão</label>
-    <input type="text" class="form-control" id="inputNumeroCartao" placeholder="0000 0000 0000 0000" [(ngModel)]="numeroCartao" name="numeroCartao">
+    <input type="text" class="form-control" id="inputNumeroCartao" placeholder="0000 0000 0000 0000"
+      [(ngModel)]="numeroCartao" name="numeroCartao">
   </div>
   <div class="col-md-6">
     <label for="inputCodigo" class="form-label">Código de Segurança</label>
-    <input type="text" class="form-control" id="inputCodigo" placeholder="XXX" [(ngModel)]="codigoSeguranca" name="codigoSeguranca">
+    <input type="text" class="form-control" id="inputCodigo" placeholder="XXX" [(ngModel)]="codigoSeguranca"
+      name="codigoSeguranca">
   </div>
   <div class="col-md-12">
     <hr class="solid">
@@ -87,4 +93,3 @@
     <small>Informações seguras e criptografadas</small>
   </div>
 </form>
-
