@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'lista', component: HomeComponent },
   { path: 'cadastro', component: CadastroComponent },
+  { path: 'cadastro/:index', component: CadastroComponent },
 ];
 
 
