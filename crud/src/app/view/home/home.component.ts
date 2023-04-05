@@ -43,7 +43,7 @@ export class HomeComponent {
   buscar() {
     if (this.busca.length >= 3) {
       this.cadastro.filter((filtrar: any) => {
-        if (filtrar.email.startsWith(this.busca)) {
+        if (filtrar.nome.toLowerCase().startsWith(this.busca.toLowerCase())) {
           this.cadastro = [];
           this.cadastro.push(filtrar);
         }
