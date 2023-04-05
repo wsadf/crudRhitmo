@@ -1,5 +1,10 @@
-{{tituloPagina}}
-<form class="row g-3">
+<div class="background">
+  <div class="container">
+    <h1 class="tituloPagina">{{tituloPagina}}</h1>
+  </div>
+</div>
+<div class="container">
+<form class="row g-3" method="post" (ngSubmit)="salvar()">
   <div class="col-md-12">
     <label for="inputNome" class="form-label">Nome</label>
     <input type="text" class="form-control" id="inputNome" placeholder="Digite seu nome " [(ngModel)]="nome"
@@ -88,9 +93,11 @@
     Seu cartão será debitado em R$ 49,00
   </div>
   <div class="col-12">
-    <button type="submit" class="btn btn-primary" (click)="salvar()">{{tituloBotao}}</button>
+    <button type="submit" class="btn btn-primary" (click)="validarForm()">{{tituloBotao}}</button>
   </div>
   <div class="col-12">
     <small>Informações seguras e criptografadas</small>
   </div>
 </form>
+</div>
+

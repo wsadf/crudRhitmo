@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { of } from 'rxjs';
+import { Validacoes } from 'src/app/valicacoes';
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -20,13 +22,28 @@ export class CadastroComponent {
   codigoSeguranca: string = '';
   mes: string = '';
   ano: string = '';
-  tituloPagina = 'Listar';
+  tituloPagina = 'Cadastro';
   tituloBotao = 'Realizar Matricula';
-  indiceEditar: number | undefined;
+  indiceEditar: any;
   editando: boolean = false;
+  meuFormGroup: any;
 
+  constructor(private route: ActivatedRoute,
+    private formBuilder: FormBuilder) {
+    this.meuFormGroup = this.formBuilder.group({
+      nome: ['', Validators.required],
+      // email: ["", [Validators.required, Validators.email]],
+      // cpf: ["", [Validators.required], Validacoes.ValidaCpf],
+    });
+  }
 
-  constructor(private route: ActivatedRoute) { }
+  validarForm() {
+    if (!this.meuFormGroup.valid) {
+      console.log("Formulário inválido");
+      return;
+    }
+    console.log("Formulário válido", this.meuFormGroup.value);
+  }
 
   ngOnInit() {
     let index = this.route.snapshot.params['index'];
@@ -34,18 +51,17 @@ export class CadastroComponent {
       this.indiceEditar = index;
       this.PreencherCampos();
       this.editando = true
-      this.tituloPagina = 'Atualizar Cadastro'
+      this.tituloPagina = 'Editar'
       this.tituloBotao = 'Salvar'
     } else {
       this.editando = false
-      this.tituloPagina = 'Listar';
+      this.tituloPagina = 'Cadastro';
       this.tituloBotao = 'Realizar Matricula';
     }
   }
 
   edit() {
     let cadastro = JSON.parse(this.getCadastro() || '{}');
-    // console.log('teste ',cadastro);
     let editar = cadastro.splice(this.indiceEditar, 1);
     return editar;
   }
@@ -74,12 +90,14 @@ export class CadastroComponent {
       if (!this.editando) {
         cadastrar.push(dadosCadastro);
         this.setCadastro(cadastrar);
+        this.limparCampos()
       } else {
         //atualizar indice do array
-        console.log('editando')
+        let update = JSON.parse(cadastro);
+        update[this.indiceEditar] = dadosCadastro;
+        this.setCadastro(update);
       }
     }
-    this.limparCampos()
   }
 
   getCadastro() {
@@ -123,3 +141,5 @@ export class CadastroComponent {
     this.ano = dados.ano;
   }
 }
+
+

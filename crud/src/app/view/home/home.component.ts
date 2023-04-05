@@ -18,9 +18,7 @@ export interface PeriodicElement {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-edit(_t25: number) {
-throw new Error('Method not implemented.');
-}
+  tituloPagina = 'Listar';
 
   ELEMENT_DATA: PeriodicElement[] = [];
 
@@ -53,18 +51,18 @@ throw new Error('Method not implemented.');
     }
   }
 
-  limpar(){
+  limpar() {
     this.busca = '';
     this.cadastro = [];
     this.cadastro = JSON.parse(this.getCadastro() || '{}');
   }
 
-  excluir(){
-      this.cadastro.splice(this.itemExcluir, 1);
-      localStorage.setItem('cadastro', JSON.stringify(this.cadastro));
+  excluir() {
+    this.cadastro.splice(this.itemExcluir, 1);
+    localStorage.setItem('cadastro', JSON.stringify(this.cadastro));
   }
 
-  setDelete(i:number){
+  setDelete(i: number) {
     this.itemExcluir = i;
   }
 

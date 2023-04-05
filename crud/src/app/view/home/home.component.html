@@ -1,11 +1,21 @@
+<div class="background">
+  <div class="container">
+    <h1 class="tituloPagina">{{tituloPagina}}</h1>
+  </div>
+</div>
+<div class="container">
 <h2 class="subtitle">Lista de cliente</h2>
 <form>
   <div class="col-md-12 mb-5">
     <label for="inputNomeCliente" class="form-label">Nome do cliente</label>
-    <input type="text" class="form-control" id="inputNomeCliente" placeholder="Digite seu nome" [(ngModel)]="busca" name="busca" (change)="buscar()">
-    <button (click)="limpar()">Ver todos os registros</button>
+    <div class="d-flex">
+      <input type="text" class="form-control" id="inputNomeCliente" placeholder="Digite seu nome" [(ngModel)]="busca"
+        name="busca" (change)="buscar()">
+      <button class="btn btn-primary ms-2" (click)="limpar()">Limpar</button>
+    </div>
   </div>
 </form>
+<div class="table-responsive">
 <table class="table table-bordered border-primary">
   <thead>
     <tr class="text-center">
@@ -24,7 +34,8 @@
       <td>{{item.criado}}</td>
       <td class="d-flex justify-content-around">
         <img src="assets/img/pen.svg" alt="" [routerLink]="['/cadastro', i]">
-        <img src="assets/img/trash.svg" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="setDelete(i)">
+        <img src="assets/img/trash.svg" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal"
+          (click)="setDelete(i)">
       </td>
     </tr>
     <tr>
@@ -37,6 +48,7 @@
     </tr>
   </tbody>
 </table>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -47,7 +59,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Deseja realmente excluir esse registro?
+        Tem certeza que deseja excluir esse registro?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -55,4 +67,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
